@@ -5,6 +5,40 @@
   <title>【エクササイズ】Whileループの演習課題</title>
 </head>
 <body>
+  <h2>Todoリスト</h2>
+  <div id="message"></div>
+  <hr>
+  <div id="output"></div>
+  <hr>
+  <table>
+    <form action=''>
+      <tr>
+        <td>タスクを追加する場合は以下にタスクを記入して下さい</td>
+      </tr>
+      <tr>
+        <td>
+          <input type="text" id="addInput">
+        </td>
+        <td>
+          <input type="button" id="addTask" value="追加">
+        </td>
+      </tr>
+      <tr>
+          <td>タスクを削除する場合は以下にタスク番号を記入して下さい</td>
+        </tr>
+      <tr>
+        <td>
+          <input type="text" id="deleteIndex">
+        </td>
+        <td>
+          <input type="button" id="deleteTask" value="削除">
+        </td>
+      </tr>
+    </form>
+  </table>
+  <button id="kadai">
+      簡易Todo
+  </button>
   <script src="main.js"></script>
 </body>
 </html>
