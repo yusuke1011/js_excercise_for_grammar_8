@@ -1,4 +1,6 @@
 (() => {
+    const kadai = document.getElementById('kadai');
+
     //簡易Todoボタン押下時は課題の内容が実行される
     kadai.addEventListener('click', () => {
 
@@ -9,7 +11,7 @@
         //     2. 買い物
         //     3. 散歩
         // ここに変数「todos」を用意する
-        let todos = ['掃除', '買い物', '散歩'];
+        const todos = ['掃除', '買い物', '散歩'];
 
         // ここに、Todoリストの機能を入力された文字によって使い分けるための文字列を配列で所持する
         //   - 変数名は「commands」とする
@@ -19,7 +21,7 @@
         //     3. 削除
         //     4. 終了
         // ここに変数「commands」を用意する
-        let commands = ['確認', '追加', '削除' ,'終了'];
+        const commands = ['確認', '追加', '削除' ,'終了'];
 
         // ここに、promptで入力したものを保持しておくための変数「input」を用意する
         let input = '';
@@ -83,11 +85,11 @@
         function showTodos(){
             console.log('========================\n現在持っているのタスク一覧\n========================')
             
-            if(todos.length === 0){
+            if(todos.length){
                 console.log('タスクなし');
             }
             else{
-                todos.forEach((element,num) => {
+                todos.forEach((element, num) => {
                     console.log(num + 1 + '：' + element + '\n');
                 });
             }
@@ -107,7 +109,7 @@
         function createTodo(){
             input = prompt('タスクを入力してください');
             
-            if(!!input){
+            if(input){
                 todos.push(input);
                 alert('新しいタスクを追加しました。');
             }
@@ -140,12 +142,12 @@
          */
         // ここにdeleteTodo関数を作る
         function deleteTodo(){
-            input = prompt('削除するタスクの番号を指定してください');
-            inputInt = parseInt(input, 10);
+            const taskNumber = prompt('削除するタスクの番号を指定してください');
+            const inputInt = parseInt(input, 10);
 
-            if((input >= 0) && (input <= todos.length)){
+            if((taskNumber >= 0) && (taskNumber <= todos.length)){
 
-                deleteTodos = todos.splice(inputInt-1, 1);
+                const deleteTodos = todos.splice(inputInt - 1, 1);
 
                 alert(deleteTodos[0] + 'を削除しました');
             }

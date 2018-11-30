@@ -6,13 +6,12 @@
     const deleteIndex = document.getElementById('deleteIndex');
     const deleteTask = document.getElementById('deleteTask');
     const message = document.getElementById('message');
-    const kadai = document.getElementById('kadai');
-
-    let todos = [];
+    
+    const todos = [];
 
     //配列に入力されたタスクを追加する
     const createTodo = (_addInput) => {
-        if(!!_addInput){
+        if(_addInput){
             //配列に追加
             todos.push(_addInput);
             //メッセージを更新
@@ -27,9 +26,9 @@
 
     //配列から指定されたタスクを削除する
     const deleteTodo = (_deleteIndex) => {
-        if((_deleteIndex >= 0) && (_deleteIndex <= todos.length)){
+        if((_deleteIndex > 0) && (_deleteIndex <= todos.length)){
             //配列を削除
-            todos.splice(_deleteIndex-1, 1);
+            todos.splice(_deleteIndex - 1, 1);
             //メッセージを更新
             message.innerText = '正常に削除されました';
         }
@@ -42,10 +41,10 @@
     //配列に保存されているタスクを表示する
     const showTodo = () => {
         output.innerText = '';
-        todos.forEach((element,num) => {
+        todos.forEach((element, num) => {
             output.innerText += num + 1 + '：' + element + '\n';
         });
-        if(todos.length === 0){
+        if(todos.length){
             output.innerText = 'タスクはありません';
         }
     };
