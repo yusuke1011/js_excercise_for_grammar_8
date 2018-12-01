@@ -85,7 +85,7 @@
         function showTodos(){
             console.log('========================\n現在持っているのタスク一覧\n========================')
             
-            if(todos.length){
+            if(!todos.length){
                 console.log('タスクなし');
             }
             else{
@@ -107,10 +107,10 @@
          */
         // ここにcreateTodo関数を作る
         function createTodo(){
-            input = prompt('タスクを入力してください');
+            const taskName = prompt('タスクを入力してください');
             
-            if(input){
-                todos.push(input);
+            if(taskName){
+                todos.push(taskName);
                 alert('新しいタスクを追加しました。');
             }
             else{
@@ -143,9 +143,9 @@
         // ここにdeleteTodo関数を作る
         function deleteTodo(){
             const taskNumber = prompt('削除するタスクの番号を指定してください');
-            const inputInt = parseInt(input, 10);
+            const inputInt = parseInt(taskNumber, 10);
 
-            if((taskNumber >= 0) && (taskNumber <= todos.length)){
+            if((taskNumber > 0) && (taskNumber <= todos.length)){
 
                 const deleteTodos = todos.splice(inputInt - 1, 1);
 

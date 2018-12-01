@@ -44,7 +44,7 @@
         todos.forEach((element, num) => {
             output.innerText += num + 1 + '：' + element + '\n';
         });
-        if(todos.length){
+        if(!todos.length){
             output.innerText = 'タスクはありません';
         }
     };
